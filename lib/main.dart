@@ -75,22 +75,29 @@ class _HomeState extends State<Home> {
                         icon: Icon(Icons.plus_one),
                         label: Text("Add to cart")),
                     ListTile(
-                        title: Column(
-                          children: [
-                            Text(
-                              "${wNames[i]}",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                        title:
+                            Column(
+                              children: [
+                                Text(
+                                  "${wNames[i]}",
+                                  style:
+                                      TextStyle(color: Colors.white, fontSize: 20),
+                                ),
+                             
+                            Column(
+                              children: [
+                                Visibility(
+                                  child: Text("Added to cart",style: TextStyle(color: Colors.amber, fontSize: 30),),
+                                  visible: cart[i],
+                                ),
+                                Visibility(
+                                  child: Text("added to favor",style: TextStyle(color: Colors.pink, fontSize: 30)),
+                                  visible: ooo[i],
+                                )
+                              ],
+                            ) ],
                             ),
-                            Text(
-                              "$myText",
-                              style: TextStyle(
-                                  color: Colors.amber,
-                                  fontSize: 30,
-                                  fontWeight: FontWeight.bold),
-                            )
-                          ],
-                        ),
+                      
                         subtitle: Row(
                           children: [
                             Text("${oldPrice[i]}",
@@ -108,18 +115,7 @@ class _HomeState extends State<Home> {
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold),
                             ),
-                            Column(
-                              children: [
-                                Visibility(
-                                  child: Text("Added to cart"),
-                                  visible: cart[i],
-                                ),
-                                Visibility(
-                                  child: Text("added to favor"),
-                                  visible: ooo[i],
-                                )
-                              ],
-                            )
+                            
                           ],
                         ),
                         leading: myImages[i],
